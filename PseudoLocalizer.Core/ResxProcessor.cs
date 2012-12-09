@@ -8,7 +8,7 @@ namespace PseudoLocalizer.Core
     {
         public event EventHandler<TransformStringEventArgs> TransformString;
 
-        public void Transform(FileStream inputStream, FileStream outputStream)
+        public void Transform(Stream inputStream, Stream outputStream)
         {
             var document = new XmlDocument();
             document.PreserveWhitespace = true;

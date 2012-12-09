@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Xml;
-
-namespace PseudoLocalizer.Core
+﻿namespace PseudoLocalizer.Core
 {
+    using System;
+    using System.IO;
+    using System.Xml;
+
     public class ResxProcessor
     {
         public event EventHandler<TransformStringEventArgs> TransformString;

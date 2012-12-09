@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace PseudoLocalizer.Core
+﻿namespace PseudoLocalizer.Core
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static class Accenter
     {
         // character mappings gratefully borrowed from the Google pseudolocalization-tool.
-        private static Dictionary<char, char> Replacements = new Dictionary<char, char>()
+        private static readonly Dictionary<char, char> Replacements = new Dictionary<char, char>()
         {
             { ' ', '\u2003' },
             { '!', '\u00a1' },

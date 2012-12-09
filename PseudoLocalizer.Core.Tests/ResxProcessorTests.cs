@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
-using System.IO;
-
-namespace PseudoLocalizer.Core.Tests
+﻿namespace PseudoLocalizer.Core.Tests
 {
+    using System.IO;
+    using System.Linq;
+    using NUnit.Framework;
+
     [TestFixture]
     public class ResxProcessorTests
     {
-        const string Test1FileName = "Test1.resx";
-        const string OutputFileName = "out.resx";
+        private const string Test1FileName = "Test1.resx";
+        private const string OutputFileName = "out.resx";
 
         [SetUp]
         public void SetUp()

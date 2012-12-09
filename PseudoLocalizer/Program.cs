@@ -1,11 +1,11 @@
-﻿using System.IO;
-using PseudoLocalizer.Core;
-
-namespace PseudoLocalizer
+﻿namespace PseudoLocalizer
 {
-    class Program
+    using System.IO;
+    using PseudoLocalizer.Core;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var inputFileName = @"c:\temp\LanguageResources.resx";
             ProcessResxFile(inputFileName);

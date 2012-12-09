@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using PseudoLocalizer.Core.Tests;
-using System.IO;
+﻿using System.IO;
 using PseudoLocalizer.Core;
 
 namespace PseudoLocalizer
@@ -13,10 +7,12 @@ namespace PseudoLocalizer
     {
         static void Main(string[] args)
         {
-            //new ResxProcessorTests().ShouldAddFunnyAccentsWhenTransformingWithTheAccenterTransformation();
-
             var inputFileName = @"c:\temp\LanguageResources.resx";
+            ProcessResxFile(inputFileName);
+        }
 
+        private static void ProcessResxFile(string inputFileName)
+        {
             var outputFileName = Path.Combine(Path.GetDirectoryName(inputFileName), Path.GetFileNameWithoutExtension(inputFileName) + ".qps-ploc" + Path.GetExtension(inputFileName));
 
             using (var inputStream = new FileStream(inputFileName, FileMode.Open, FileAccess.Read))
@@ -26,8 +22,6 @@ namespace PseudoLocalizer
                 processor.TransformString += (s, e) => { e.Value = Accenter.Transform(e.Value); };
                 processor.Transform(inputStream, outputStream);
             }
-
-
         }
     }
 }

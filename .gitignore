@@ -1,17 +1,3 @@
 *.suo
-
 TestResult.xml
-
 *.VisualState.xml
-
-PseudoLocalizer/obj
-
-PseudoLocalizer/bin
-
-PseudoLocalizer.Core/obj
-
-PseudoLocalizer.Core/bin
-
-PseudoLocalizer.Core.Tests/obj
-
-PseudoLocalizer.Core.Tests/bin

@@ -21,8 +21,8 @@
   <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
  </ProjectOptions>
  <Targets>
-  <Target Name="$(ProjectDir)/../PseudoLocalizer/bin/Debug/PseudoLocalizer.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/../PseudoLocalizer/bin/Debug/PseudoLocalizer.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../PseudoLocalize/bin/Debug/PseudoLocalize.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../PseudoLocalize/bin/Debug/PseudoLocalizer.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
@@ -41,11 +41,24 @@
  </Rules>
  <FxCopReport Version="1.36">
   <Targets>
-   <Target Name="$(ProjectDir)/../PseudoLocalizer/bin/Debug/PseudoLocalizer.Core.dll">
+   <Target Name="$(ProjectDir)/../PseudoLocalize/bin/Debug/PseudoLocalize.exe">
+    <Modules>
+     <Module Name="pseudolocalize.exe">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2012-12-14 20:52:11Z">
+        <Issue Name="NoStrongName">
+         <Item>'PseudoLocalize.exe'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../PseudoLocalize/bin/Debug/PseudoLocalizer.Core.dll">
     <Modules>
      <Module Name="pseudolocalizer.core.dll">
       <Messages>
-       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2012-12-09 17:06:14Z">
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2012-12-09 17:06:14Z">
         <Issue Name="NoStrongName">
          <Item>'PseudoLocalizer.Core.dll'</Item>
         </Issue>
@@ -54,46 +67,10 @@
      </Module>
     </Modules>
    </Target>
-   <Target Name="$(ProjectDir)/../PseudoLocalizer/bin/Debug/PseudoLocalizer.exe">
-    <Modules>
-     <Module Name="pseudolocalizer.exe">
-      <Messages>
-       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2012-12-09 17:06:14Z">
-        <Issue Name="NoStrongName">
-         <Item>'PseudoLocalizer.exe'</Item>
-        </Issue>
-       </Message>
-      </Messages>
-      <Namespaces>
-       <Namespace Name="PseudoLocalizer">
-        <Types>
-         <Type Name="Program">
-          <Members>
-           <Member Name="#Main(System.String[])">
-            <Messages>
-             <Message Id="args" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2012-12-09 17:06:14Z" FixCategory="NonBreaking">
-              <Issue>
-               <Item>'args'</Item>
-               <Item>'Program.Main(string[])'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-      </Namespaces>
-     </Module>
-    </Modules>
-   </Target>
   </Targets>
   <Rules>
    <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
     <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
-   </Rule>
-   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
-    <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
    </Rule>
   </Rules>
  </FxCopReport>

@@ -70,7 +70,20 @@
         [Test]
         public void ShouldApplyMultipleTransformations()
         {
-            Assert.Fail("niy");
+            using (var inputStream = new FileStream(Test1FileName, FileMode.Open, FileAccess.Read))
+            using (var outputStream = new FileStream(OutputFileName, FileMode.Create, FileAccess.Write))
+            {
+                var processor = new ResxProcessor();
+                processor.TransformString += (s, e) => { e.Value = e.Value + "1"; };
+                processor.TransformString += (s, e) => { e.Value = Brackets.Transform(e.Value); };
+                processor.TransformString += (s, e) => { e.Value = e.Value + "2"; };
+                processor.Transform(inputStream, outputStream);
+            }
+
+            var original = File.ReadAllText(Test1FileName);
+            var transformed = File.ReadAllText(OutputFileName);
+            Assert.That(original.Contains("<value>Dude</value>"));
+            Assert.That(transformed.Contains("<value>[Dude1]2</value>"));
         }
 
         private static void DeleteOutputFile()

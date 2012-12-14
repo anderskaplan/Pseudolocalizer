@@ -3,6 +3,9 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// A transform which adds accents to all letters.
+    /// </summary>
     public static class Accents
     {
         // character mappings gratefully borrowed from the Google pseudolocalization-tool.

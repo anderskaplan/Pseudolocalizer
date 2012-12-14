@@ -2,10 +2,14 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
-    using PseudoLocalizer.Core;
     using System.Security;
+    using PseudoLocalizer.Core;
 
+    /// <summary>
+    /// Main class for the pseudo-localizer console application.
+    /// </summary>
     public class Program
     {
         private List<string> _inputFiles = new List<string>();
@@ -30,16 +34,6 @@
         public bool HasInputFiles
         {
             get { return _inputFiles.Count > 0; }
-        }
-
-        public void ClearInputFiles()
-        {
-            _inputFiles.Clear();
-        }
-
-        public void AddInputFile(string filePath)
-        {
-            _inputFiles.Add(filePath);
         }
 
         public static void Main(string[] args)
@@ -70,6 +64,16 @@
             }
         }
 
+        public void ClearInputFiles()
+        {
+            _inputFiles.Clear();
+        }
+
+        public void AddInputFile(string filePath)
+        {
+            _inputFiles.Add(filePath);
+        }
+
         private static bool ParseArguments(string[] args, Program instance)
         {
             instance.ClearInputFiles();
@@ -82,9 +86,9 @@
 
             foreach (var arg in args)
             {
-                if (arg.StartsWith("/") || arg.StartsWith("-"))
+                if (arg.StartsWith("/", StringComparison.Ordinal) || arg.StartsWith("-", StringComparison.Ordinal))
                 {
-                    switch (arg.Substring(1).ToUpper())
+                    switch (arg.Substring(1).ToUpper(CultureInfo.InvariantCulture))
                     {
                         case "L":
                             instance.EnableExtraLength = true;
@@ -147,22 +151,27 @@
                     {
                         processor.TransformString += (s, e) => { e.Value = ExtraLength.Transform(e.Value); };
                     }
+
                     if (EnableAccents || UseDefaultOptions)
                     {
                         processor.TransformString += (s, e) => { e.Value = Accents.Transform(e.Value); };
                     }
+                    
                     if (EnableBrackets || UseDefaultOptions)
                     {
                         processor.TransformString += (s, e) => { e.Value = Brackets.Transform(e.Value); };
                     }
+                    
                     if (EnableMirror)
                     {
                         processor.TransformString += (s, e) => { e.Value = Mirror.Transform(e.Value); };
                     }
+                    
                     if (EnableUnderscores)
                     {
                         processor.TransformString += (s, e) => { e.Value = Underscores.Transform(e.Value); };
                     }
+                    
                     processor.Transform(inputStream, outputStream);
                 }
 
@@ -176,7 +185,7 @@
                     ex is IOException ||
                     ex is SecurityException)
                 {
-                    Console.WriteLine("Could not process the input file {0}: {1}", inputFileName, ex.Message);
+                    Console.WriteLine(ex.Message);
                 }
                 else
                 {

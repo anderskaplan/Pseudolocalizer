@@ -4,10 +4,19 @@
     using System.IO;
     using System.Xml;
 
+    /// <summary>
+    /// Applies transforms to string values in Resx resource files.
+    /// </summary>
     public class ResxProcessor
     {
+        /// <summary>
+        /// Event raised when a string value to be transformed is found.
+        /// </summary>
         public event EventHandler<TransformStringEventArgs> TransformString;
 
+        /// <summary>
+        /// Transform: read from an input stream and write to an output stream.
+        /// </summary>
         public void Transform(Stream inputStream, Stream outputStream)
         {
             var document = new XmlDocument();

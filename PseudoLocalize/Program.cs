@@ -60,7 +60,7 @@
                 Console.WriteLine("      This makes it possible to spot cut off strings.");
                 Console.WriteLine("  /M  Reverse all words (\"mirror\").");
                 Console.WriteLine("  /U  Replace all characters with underscores.");
-                Console.WriteLine("The default, if no options are given, are: /L /A /B.");
+                Console.WriteLine("The default options, if none are given, are: /L /A /B.");
             }
         }
 

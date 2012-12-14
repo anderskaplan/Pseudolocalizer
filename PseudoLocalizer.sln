@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoLocalizer.Core", "Pse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoLocalizer.Core.Tests", "PseudoLocalizer.Core.Tests\PseudoLocalizer.Core.Tests.csproj", "{11F7946E-27F5-461E-A42C-B7C998752182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoLocalizerApp", "PseudoLocalizerApp\PseudoLocalizerApp.csproj", "{14263B03-04C6-4EAE-AAC0-900DA06278DC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoLocalize", "PseudoLocalize\PseudoLocalize.csproj", "{22116C29-84B1-4FB9-8AE3-BAA4059381A7}"
 EndProject
 Global
@@ -39,16 +37,6 @@ Global
 		{11F7946E-27F5-461E-A42C-B7C998752182}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{11F7946E-27F5-461E-A42C-B7C998752182}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{11F7946E-27F5-461E-A42C-B7C998752182}.Release|x86.ActiveCfg = Release|Any CPU
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Debug|x86.ActiveCfg = Debug|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Debug|x86.Build.0 = Debug|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Release|Any CPU.ActiveCfg = Release|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Release|Mixed Platforms.Build.0 = Release|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Release|x86.ActiveCfg = Release|x86
-		{14263B03-04C6-4EAE-AAC0-900DA06278DC}.Release|x86.Build.0 = Release|x86
 		{22116C29-84B1-4FB9-8AE3-BAA4059381A7}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{22116C29-84B1-4FB9-8AE3-BAA4059381A7}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{22116C29-84B1-4FB9-8AE3-BAA4059381A7}.Debug|Mixed Platforms.Build.0 = Debug|x86

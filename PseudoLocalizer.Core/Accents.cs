@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class Accenter
+    public static class Accents
     {
         // character mappings gratefully borrowed from the Google pseudolocalization-tool.
         private static readonly Dictionary<char, char> Replacements = new Dictionary<char, char>()
@@ -16,8 +16,6 @@
             { '%', '\u2030' },
             { '&', '\u214b' },
             { '\'', '\u00b4' },
-            { '(', '{' },
-            { ')', '}' },
             { '*', '\u204e' },
             { '+', '\u207a' },
             { ',', '\u060c' },
@@ -99,9 +97,7 @@
             { 'x', '\u1e8b' },
             { 'y', '\u00fd' },
             { 'z', '\u017e' },
-            { '{', '(' },
             { '|', '\u00a6' },
-            { '}', ')' },
             { '~', '\u02de' },
         };
 

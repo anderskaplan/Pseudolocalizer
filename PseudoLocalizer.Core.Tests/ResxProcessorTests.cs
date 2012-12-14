@@ -36,7 +36,7 @@
             using (var outputStream = new FileStream(OutputFileName, FileMode.Create, FileAccess.Write))
             {
                 var processor = new ResxProcessor();
-                processor.TransformString += (s, e) => { e.Value = new string(e.Value.Reverse().ToArray()); };
+                processor.TransformString += (s, e) => { e.Value = Mirror.Transform(e.Value); };
                 processor.Transform(inputStream, outputStream);
             }
 
@@ -57,7 +57,7 @@
             using (var outputStream = new FileStream(OutputFileName, FileMode.Create, FileAccess.Write))
             {
                 var processor = new ResxProcessor();
-                processor.TransformString += (s, e) => { e.Value = Accenter.Transform(e.Value); };
+                processor.TransformString += (s, e) => { e.Value = Accents.Transform(e.Value); };
                 processor.Transform(inputStream, outputStream);
             }
 
@@ -70,6 +70,7 @@
         [Test]
         public void ShouldApplyMultipleTransformations()
         {
+            Assert.Fail("niy");
         }
 
         private static void DeleteOutputFile()

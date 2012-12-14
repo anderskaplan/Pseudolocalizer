@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResxProcessorTests.cs" />
+    <Compile Include="TransformTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PseudoLocalizer.Core\PseudoLocalizer.Core.csproj">

@@ -26,7 +26,7 @@
                 processor.Transform(inputStream, outputStream);
             }
 
-            Assert.That(File.ReadAllBytes(Test1FileName), Is.EqualTo(File.ReadAllBytes(OutputFileName)), "the output file is identical to the input file.");
+            Assert.That(File.ReadAllText(OutputFileName), Is.EqualTo(File.ReadAllText(Test1FileName)), "the output file is identical to the input file.");
         }
 
         [Test]

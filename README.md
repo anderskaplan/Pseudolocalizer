@@ -1,3 +1,6 @@
+**NOTE:** Please use [Martin Costello's fork of this repository](https://github.com/martincostello/Pseudolocalizer) instead, it is much more actively maintained.
+
+
 Pseudolocalizer
 ===============
 The Pseudolocalizer is a tool for testing internationalization aspects of software. Specifically, it reads string values from resource files in the Resx format and generates fake translations for the "qps-ploc" pseudo-locale.
